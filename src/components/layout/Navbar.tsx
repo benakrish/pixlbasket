@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../../hooks/useTheme';
 import './Navbar.css';
 
@@ -12,10 +13,10 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    { label: 'Home', path: '#/' },
-    { label: 'Games', path: '#/games' },
-    { label: 'About', path: '#/about' },
-    { label: 'Contact', path: '#/contact' }
+    { label: 'Home', path: '/' },
+    { label: 'Games', path: '/games' },
+    { label: 'About', path: '/about' },
+    { label: 'Contact', path: '/contact' }
   ];
 
   const toggleMenu = () => {
@@ -26,7 +27,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <div className="container navbar-container">
         <div className="navbar-logo">
-          <a href="/">PixlBasket</a>
+          <Link to="/">GameHub</Link>
         </div>
 
         {/* Mobile menu button */}
@@ -43,7 +44,7 @@ export const Navbar = () => {
           <ul>
             {navItems.map((item) => (
               <li key={item.path}>
-                <a href={item.path}>{item.label}</a>
+                <Link to={item.path}>{item.label}</Link>
               </li>
             ))}
           </ul>
