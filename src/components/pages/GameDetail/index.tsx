@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Button } from '../../common/Button';
 import { LoadingSpinner } from '../../common/LoadingSpinner';
 import { AdDisplay } from '../../common/AdDisplay';
+import Chess from '../../games/Chess';
 import './GameDetail.css';
 
 // Mock game data - these will be browser-based HTML games
@@ -68,6 +69,127 @@ const gamesData = [
       { key: 'Mouse', action: 'Click to move tiles' },
       { key: 'R', action: 'Shuffle/Restart' }
     ]
+  },
+  {
+    id: 'pacman',
+    title: 'Pac-Man',
+    description: 'Navigate through a maze while chomping on dots and avoiding ghosts.',
+    longDescription: 'Pac-Man is an iconic arcade game where players control the titular character through a maze, eating dots while avoiding four colored ghosts. Power pellets temporarily allow Pac-Man to eat the ghosts for bonus points. The maze contains various pathways and tunnels that can be used strategically to evade pursuers. As levels progress, the ghosts become faster and more aggressive, increasing the challenge.',
+    image: '/placeholder-pacman.jpg',
+    category: 'arcade',
+    difficulty: 'Medium',
+    rating: 4.9,
+    howToPlay: 'Navigate Pac-Man through the maze to eat all the dots. Avoid the ghosts unless you\'ve eaten a power pellet, which allows you to eat the ghosts temporarily.',
+    controls: [
+      { key: '←/→/↑/↓', action: 'Move Pac-Man' },
+      { key: 'P', action: 'Pause game' }
+    ]
+  },
+  {
+    id: 'chess',
+    title: 'Chess',
+    description: 'The classic strategy board game of kings and queens.',
+    longDescription: 'Chess is a two-player strategy board game played on a checkered board with 64 squares arranged in an 8×8 grid. Each player begins with 16 pieces: one king, one queen, two rooks, two knights, two bishops, and eight pawns. The objective is to checkmate the opponent\'s king, whereby the king is under immediate attack (in "check") and there is no way for it to escape. Chess requires deep strategic thinking, foresight, and an understanding of complex positional concepts.',
+    image: '/placeholder-chess.jpg',
+    category: 'strategy',
+    difficulty: 'Hard',
+    rating: 4.7,
+    howToPlay: 'Move your pieces according to their specific movement rules. Capture enemy pieces by moving onto their square. Checkmate your opponent\'s king to win.',
+    controls: [
+      { key: 'Mouse', action: 'Select and move pieces' },
+      { key: 'U', action: 'Undo move' }
+    ]
+  },
+  {
+    id: 'solitaire',
+    title: 'Solitaire',
+    description: 'The popular single-player card game to test your patience and strategy.',
+    longDescription: 'Solitaire (also known as Klondike) is a single-player card game where the objective is to sort a standard 52-card deck into four foundation piles, one for each suit, arranged in ascending order from Ace to King. Players must strategically move cards between the tableau piles following specific rules. The game tests planning ability, patience, and strategic thinking. Despite its simple rules, Solitaire offers complex gameplay with many games being unsolvable, adding to its enduring challenge.',
+    image: '/placeholder-solitaire.jpg',
+    category: 'card',
+    difficulty: 'Medium',
+    rating: 4.4,
+    howToPlay: 'Build four foundation piles in ascending order from Ace to King, sorted by suit. Move cards in the tableau in descending order with alternating colors.',
+    controls: [
+      { key: 'Mouse', action: 'Move cards' },
+      { key: 'Double-click', action: 'Auto-move to foundation' }
+    ]
+  },
+  {
+    id: 'minesweeper',
+    title: 'Minesweeper',
+    description: 'Clear the board without detonating any mines using clues about neighboring mines.',
+    longDescription: 'Minesweeper is a logic puzzle game where players clear a rectangular board containing hidden mines without detonating any of them. The board is divided into cells, which have three states: uncovered, covered, and flagged. A covered cell is blank and clickable, while an uncovered cell either contains a number (indicating the number of mines adjacent to it) or is blank (indicating there are no mines adjacent to it). The player uses the numbers as clues to deduce where the mines are and safely clear the board.',
+    image: '/placeholder-minesweeper.jpg',
+    category: 'puzzle',
+    difficulty: 'Medium',
+    rating: 4.1,
+    howToPlay: 'Left-click to reveal a cell. Right-click to flag a suspected mine. Numbers indicate how many mines are adjacent to that cell. Use logic to determine which cells are safe to click.',
+    controls: [
+      { key: 'Left-click', action: 'Reveal cell' },
+      { key: 'Right-click', action: 'Flag/unflag cell' }
+    ]
+  },
+  {
+    id: 'hangman',
+    title: 'Hangman',
+    description: 'Guess the word one letter at a time before the hangman is complete.',
+    longDescription: 'Hangman is a word-guessing game where one player thinks of a word and the other tries to guess it by suggesting letters. Each incorrect guess results in drawing a part of a hangman figure. The game ends when the word is guessed correctly or when the hangman figure is completed. Hangman helps build vocabulary and spelling skills while providing a fun challenge for players of all ages.',
+    image: '/placeholder-hangman.jpg',
+    category: 'word',
+    difficulty: 'Easy',
+    rating: 4.0,
+    howToPlay: 'Guess letters to complete the hidden word. Each wrong guess adds a part to the hangman. Guess the word before the hangman is complete to win.',
+    controls: [
+      { key: 'Keyboard', action: 'Type letters to guess' },
+      { key: 'Enter', action: 'Submit guess' }
+    ]
+  },
+  {
+    id: 'sudoku',
+    title: 'Sudoku',
+    description: 'Fill the 9×9 grid with digits so each column, row, and 3×3 section contain numbers 1-9.',
+    longDescription: 'Sudoku is a logic-based number placement puzzle. The objective is to fill a 9×9 grid with digits so that each column, each row, and each of the nine 3×3 subgrids contains all of the digits from 1 to 9. The puzzle setter provides a partially completed grid, which has a unique solution. Sudoku requires logical thinking and deduction, making it an excellent exercise for the mind.',
+    image: '/placeholder-sudoku.jpg',
+    category: 'puzzle',
+    difficulty: 'Medium',
+    rating: 4.6,
+    howToPlay: 'Fill each empty cell with a number from 1-9. Each row, column, and 3x3 box must contain all numbers from 1-9 without repetition.',
+    controls: [
+      { key: 'Mouse', action: 'Select cell' },
+      { key: 'Number keys', action: 'Enter a number' },
+      { key: 'Del/Backspace', action: 'Clear a cell' }
+    ]
+  },
+  {
+    id: 'breakout',
+    title: 'Breakout',
+    description: 'Destroy all the bricks with a bouncing ball and a paddle.',
+    longDescription: 'Breakout is an arcade game where a layer of bricks is arranged at the top of the screen, and the player must use a paddle to bounce a ball against the bricks to destroy them. The objective is to eliminate all bricks without letting the ball fall below the paddle. As the game progresses, the ball moves faster, and the paddle may shrink, increasing the challenge. Breakout requires quick reflexes and spatial awareness.',
+    image: '/placeholder-breakout.jpg',
+    category: 'arcade',
+    difficulty: 'Medium',
+    rating: 4.3,
+    howToPlay: 'Move the paddle to bounce the ball and break all the bricks. Don\'t let the ball fall off the bottom of the screen.',
+    controls: [
+      { key: '←/→', action: 'Move paddle left/right' },
+      { key: 'Space', action: 'Launch ball/Pause game' }
+    ]
+  },
+  {
+    id: 'tictactoe',
+    title: 'Tic Tac Toe',
+    description: 'Classic game of X\'s and O\'s. Get three in a row to win.',
+    longDescription: 'Tic Tac Toe is a paper-and-pencil game for two players who take turns marking X or O in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner. It\'s a solved game, with a forced draw assuming best play from both players. Despite its simplicity, Tic Tac Toe provides an accessible introduction to basic concepts of game theory and strategic thinking.',
+    image: '/placeholder-tictactoe.jpg',
+    category: 'strategy',
+    difficulty: 'Easy',
+    rating: 4.0,
+    howToPlay: 'Take turns placing X or O on the 3x3 grid. Get three of your symbols in a row (horizontally, vertically, or diagonally) to win.',
+    controls: [
+      { key: 'Mouse', action: 'Place X or O' },
+      { key: 'R', action: 'Restart game' }
+    ]
   }
 ];
 
@@ -129,11 +251,15 @@ const GameDetail = () => {
         </div>
         
         <div className="game-canvas-container">
-          {/* This is where the game would be embedded */}
-          <div className="game-canvas-placeholder">
-            <p>Game would load here. This is a placeholder for the actual {game.title} game.</p>
-            <p>When implementing the actual game, this would be replaced with a canvas or interactive HTML elements.</p>
-          </div>
+          {gameId === 'chess' ? (
+            <Chess onBackToDetails={handleBackClick} />
+          ) : (
+            // Placeholder for other games
+            <div className="game-canvas-placeholder">
+              <p>Game would load here. This is a placeholder for the actual {game.title} game.</p>
+              <p>When implementing the actual game, this would be replaced with a canvas or interactive HTML elements.</p>
+            </div>
+          )}
         </div>
       </div>
     );

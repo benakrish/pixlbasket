@@ -1,0 +1,257 @@
+.chess-game {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .chess-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .chess-header h2 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .chess-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .chess-button {
+    padding: 8px 16px;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  .chess-button:hover {
+    background-color: var(--color-primary-hover);
+  }
+  
+  .chess-status {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .thinking-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--color-primary);
+    border-top-color: transparent;
+    animation: thinking-spin 1s linear infinite;
+  }
+  
+  @keyframes thinking-spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .chess-board-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .chess-captured-pieces {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .captured-pieces-section {
+    background-color: var(--color-card-background);
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .captured-label {
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  
+  .captured-pieces-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .captured-piece {
+    font-size: 20px;
+  }
+  
+  .chess-board {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #8b5a2b;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .chess-row {
+    display: flex;
+  }
+  
+  .chess-cell {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .chess-cell.light {
+    background-color: #f0d9b5;
+  }
+  
+  .chess-cell.dark {
+    background-color: #b58863;
+  }
+  
+  .chess-cell.selected {
+    background-color: rgba(173, 216, 230, 0.7);
+  }
+  
+  .chess-cell.possible-move {
+    cursor: pointer;
+  }
+  
+  .chess-piece {
+    font-size: 40px;
+    line-height: 1;
+    text-align: center;
+    user-select: none;
+    z-index: 10;
+    transition: transform 0.2s;
+  }
+  
+  .chess-piece.white {
+    color: #fff;
+    text-shadow: 0 0 1px #000, 0 0 2px #000;
+  }
+  
+  .chess-piece.black {
+    color: #000;
+  }
+  
+  .move-indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+  }
+  
+  .capture-indicator {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 0, 0, 0.5);
+    position: absolute;
+  }
+  
+  .cell-coordinate {
+    position: absolute;
+    font-size: 12px;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  .row-coordinate {
+    left: 3px;
+    top: 3px;
+  }
+  
+  .col-coordinate {
+    right: 3px;
+    bottom: 3px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 960px) {
+    .chess-board-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .chess-captured-pieces {
+      width: 100%;
+      max-width: 480px;
+    }
+    
+    .captured-pieces-section {
+      display: flex;
+      align-items: center;
+    }
+    
+    .captured-label {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .chess-cell {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .chess-piece {
+      font-size: 30px;
+    }
+    
+    .capture-indicator {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .cell-coordinate {
+      font-size: 10px;
+    }
+    
+    .chess-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .chess-cell {
+      width: 36px;
+      height: 36px;
+    }
+    
+    .chess-piece {
+      font-size: 26px;
+    }
+    
+    .capture-indicator {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .cell-coordinate {
+      display: none;
+    }
+  }
