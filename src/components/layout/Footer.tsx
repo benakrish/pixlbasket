@@ -16,20 +16,20 @@ export const Footer = () => {
         <div className="footer-section">
           <h4 className="footer-subtitle">Navigation</h4>
           <ul className="footer-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/games">Games</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/games">Games</a></li>
+            <li><a href="#/about">About</a></li>
+            <li><a href="#/contact">Contact</a></li>
           </ul>
         </div>
 
         <div className="footer-section">
           <h4 className="footer-subtitle">Popular Games</h4>
           <ul className="footer-links">
-            <li><a href="/games/tetris">Tetris</a></li>
-            <li><a href="/games/snake">Snake</a></li>
-            <li><a href="/games/memory">Memory Match</a></li>
-            <li><a href="/games/puzzle">Puzzle</a></li>
+            <li><a href="#/games/tetris">Tetris</a></li>
+            <li><a href="#/games/snake">Snake</a></li>
+            <li><a href="#/games/memory">Memory Match</a></li>
+            <li><a href="#/games/puzzle">Puzzle</a></li>
           </ul>
         </div>
 

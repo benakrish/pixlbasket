@@ -12,10 +12,10 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems: NavItem[] = [
-    { label: 'Home', path: '/' },
-    { label: 'Games', path: '/games' },
-    { label: 'About', path: '/about' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Home', path: '#/' },
+    { label: 'Games', path: '#/games' },
+    { label: 'About', path: '#/about' },
+    { label: 'Contact', path: '#/contact' }
   ];
 
   const toggleMenu = () => {

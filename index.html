@@ -12,5 +12,22 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3178006671202717" crossorigin="anonymous"></script>
+    <script>
+      (function() {
+        // Check if we were redirected from 404.html
+        if (sessionStorage.getItem('redirect') === 'true') {
+          // Remove the redirect flag
+          sessionStorage.removeItem('redirect');
+          
+          // Get the saved path
+          var savedPath = sessionStorage.getItem('redirectPath');
+          if (savedPath) {
+            sessionStorage.removeItem('redirectPath');
+            // Replace the hash with the path using history API
+            window.history.replaceState(null, null, window.location.pathname + savedPath);
+          }
+        }
+      })();
+    </script>
   </body>
 </html>
