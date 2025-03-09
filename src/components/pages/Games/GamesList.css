@@ -1,0 +1,34 @@
+.games-list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-6);
+}
+
+.game-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.games-empty {
+  text-align: center;
+  padding: var(--space-16);
+  color: var(--color-muted);
+}
+
+@media (min-width: 640px) {
+  .games-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .games-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1280px) {
+  .games-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

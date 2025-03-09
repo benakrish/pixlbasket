@@ -1,0 +1,86 @@
+.game-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.game-category {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  z-index: 1;
+}
+
+.category-tag {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: var(--font-size-sm);
+  border-radius: var(--border-radius-full);
+  text-transform: capitalize;
+}
+
+.game-description {
+  margin-bottom: var(--space-4);
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.game-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.game-rating {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.stars-container {
+  display: flex;
+}
+
+.star {
+  color: #f59e0b;
+}
+
+.empty-star {
+  color: #e2e8f0;
+}
+
+.rating-value {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border-radius: var(--border-radius-full);
+}
+
+.difficulty-easy {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+
+.difficulty-medium {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+}
+
+.difficulty-hard {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+}
