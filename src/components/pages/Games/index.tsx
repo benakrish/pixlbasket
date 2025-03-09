@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { GamesList } from './GamesList';
+import { AdDisplay } from '../../common/AdDisplay';
 import './Games.css';
 
 // Mock categories for filtering
@@ -56,11 +57,17 @@ const Games = () => {
             />
           </div>
         </div>
+        
+        <AdDisplay adSlot="2468135790" format="horizontal" />
 
         <GamesList 
           category={selectedCategory} 
           searchQuery={searchQuery} 
         />
+        
+        <div className="games-footer-ad">
+          <AdDisplay adSlot="1357924680" format="rectangle" />
+        </div>
       </div>
     </div>
   );

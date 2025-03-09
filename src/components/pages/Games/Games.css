@@ -1,4 +1,8 @@
-.games-page {
+.games-footer-ad {
+  margin-top: var(--space-12);
+  display: flex;
+  justify-content: center;
+}.games-page {
   padding: var(--space-8) 0 var(--space-16);
 }
 

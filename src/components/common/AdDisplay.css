@@ -1,0 +1,46 @@
+.ad-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: var(--space-8) auto;
+    min-height: 100px;
+    background-color: rgba(0, 0, 0, 0.02);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ad-container.horizontal {
+    min-height: 90px;
+  }
+  
+  .ad-container.vertical {
+    min-height: 280px;
+  }
+  
+  .ad-container.rectangle {
+    min-height: 250px;
+    max-width: 300px;
+  }
+  
+  /* Make sure the ad doesn't escape its container */
+  .ad-container ins {
+    max-width: 100%;
+  }
+  
+  /* Add placeholder styling for development */
+  .ad-container::before {
+    content: 'Advertisement';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--font-size-sm);
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 0;
+  }
+  
+  /* In production, the actual ad will cover this text */

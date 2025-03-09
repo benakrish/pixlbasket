@@ -38,7 +38,7 @@ export const Footer = () => {
           <ul className="footer-links">
             <li><a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
             <li><a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-            <li><a href="https://discord.com" target="_blank" rel="noopener noreferrer">Discord</a></li>
+            <li><a href="https://discord.gg/dXhxkq7V9x" target="_blank" rel="noopener noreferrer">Discord</a></li>
             <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
           </ul>
         </div>
