@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-section">
-          <h3 className="footer-title">GameHub</h3>
+          <h3 className="footer-title">PixlBasket</h3>
           <p className="footer-description">
             The ultimate place to play fun browser games and challenge your friends.
           </p>
@@ -45,7 +45,7 @@ export const Footer = () => {
       
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {currentYear} GameHub. All rights reserved.</p>
+          <p>&copy; {currentYear} PixlBasket. All rights reserved.</p>
         </div>
       </div>
     </footer>

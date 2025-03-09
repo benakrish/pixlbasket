@@ -27,7 +27,7 @@ export const Navbar = () => {
     <nav className="navbar">
       <div className="container navbar-container">
         <div className="navbar-logo">
-          <Link to="/">GameHub</Link>
+          <Link to="/">PixlBasket</Link>
         </div>
 
         {/* Mobile menu button */}

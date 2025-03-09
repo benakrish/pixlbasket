@@ -9,7 +9,7 @@ export const Hero = () => {
         <div className="hero-content">
           <h1 className="hero-title">Play Fun Games Online</h1>
           <p className="hero-description">
-            Welcome to GameHub, your destination for fun browser-based games. Challenge yourself, beat high scores, and compete with friends!
+            Welcome to PixlBasket, your destination for fun browser-based games. Challenge yourself, beat high scores, and compete with friends!
           </p>
           <div className="hero-buttons">
             <Link to="/games">
