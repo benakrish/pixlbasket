@@ -1,8 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0; URL='/'" />
-  </head>
-  <body>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Get the current path excluding the 404.html part
+    var pathSegmentsToKeep = 1; // Adjust based on your repo settings
+    var location = window.location;
+    
+    // Save the URL path as a fragment (hash)
+    var redirectUrl = location.protocol + '//' + location.hostname + 
+                      (location.port ? ':' + location.port : '') +
+                      location.pathname.split('/').slice(0, pathSegmentsToKeep + 1).join('/') + '/#' +
+                      location.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/') +
+                      (location.search ? location.search : '') +
+                      (location.hash ? location.hash : '');
+                      
+    sessionStorage.setItem('redirect', 'true');
+    sessionStorage.setItem('redirectPath', location.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/'));
+    window.location.href = redirectUrl;
+  </script>
+</head>
+<body>
+  <p>Redirecting to the app...</p>
+</body>
 </html>
